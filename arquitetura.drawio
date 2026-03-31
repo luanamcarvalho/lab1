@@ -1,0 +1,111 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.6.6">
+  <diagram name="Arquitetura" id="68fB0LaHPOB5W-jDMO8Q">
+    <mxGraphModel dx="1356" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RI8mviZZF9KrhX67Dygs-39" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="RI8mviZZF9KrhX67Dygs-4" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="App1 (Java)" vertex="1">
+          <mxGeometry height="60" width="140" x="120" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-47" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="App2 (Python)" vertex="1">
+          <mxGeometry height="60" width="140" x="640" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-52" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="RI8mviZZF9KrhX67Dygs-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;" value="Redis Cache" vertex="1">
+          <mxGeometry height="60" width="140" x="390" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-40" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="RI8mviZZF9KrhX67Dygs-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Código App2\n(Python)" vertex="1">
+          <mxGeometry height="80" width="160" x="630" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-56" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="RI8mviZZF9KrhX67Dygs-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-57" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="RI8mviZZF9KrhX67Dygs-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="docker-compose.yml\nConfiguração de deploy" vertex="1">
+          <mxGeometry height="80" width="180" x="370" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-61" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="RI8mviZZF9KrhX67Dygs-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Build App2" vertex="1">
+          <mxGeometry height="60" width="120" x="630" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-62" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="RI8mviZZF9KrhX67Dygs-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="App1 Container\nporta 8081" vertex="1">
+          <mxGeometry height="80" width="160" x="130" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;" value="Redis Cache\nporta 6379" vertex="1">
+          <mxGeometry height="80" width="160" x="380" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-63" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="RI8mviZZF9KrhX67Dygs-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="App2 Container\nporta 8082" vertex="1">
+          <mxGeometry height="80" width="160" x="610" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-59" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="RI8mviZZF9KrhX67Dygs-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Build App1" vertex="1">
+          <mxGeometry height="60" width="120" x="150" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-49" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.549;entryY=-0.029;entryDx=0;entryDy=0;entryPerimeter=0;" target="RI8mviZZF9KrhX67Dygs-10" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-54" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="RI8mviZZF9KrhX67Dygs-4" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Docker Compose" vertex="1">
+          <mxGeometry height="70" width="160" x="380" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-37" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="RI8mviZZF9KrhX67Dygs-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Código App1\n(Java)" vertex="1">
+          <mxGeometry height="80" width="160" x="110" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-50" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.563;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="RI8mviZZF9KrhX67Dygs-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-60" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="RI8mviZZF9KrhX67Dygs-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-55" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Build Redis" vertex="1">
+          <mxGeometry height="60" width="120" x="400" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-58" edge="1" parent="1" source="RI8mviZZF9KrhX67Dygs-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.573;entryY=-0.015;entryDx=0;entryDy=0;entryPerimeter=0;" target="RI8mviZZF9KrhX67Dygs-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-64" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="cache 10s" vertex="1">
+          <mxGeometry height="30" width="60" x="310" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="RI8mviZZF9KrhX67Dygs-65" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="cache 60s" vertex="1">
+          <mxGeometry height="30" width="60" x="550" y="700" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

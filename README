@@ -1,0 +1,123 @@
+# Projeto de Exemplo com App1, App2 e Redis
+
+Este repositório contém duas aplicações e um `docker-compose` para executá-las juntas com cache Redis.
+
+## Estrutura do projeto
+
+- `App1/`
+  - `src/Main.java`: aplicação Java com duas rotas (`/rota1`, `/rota2`)
+  - `pom.xml`: dependência do Redis (`Jedis`) e build Maven
+  - `Dockerfile`: build do JAR com Maven e execução do container Java
+- `App2/`
+  - `app.py`: aplicação Python com duas rotas (`/rota1`, `/rota2`)
+  - `requirements.txt`: dependência `redis`
+  - `Dockerfile`: instala dependências e executa a aplicação Python
+- `docker-compose.yml`: orquestra três serviços
+  - `redis`: cache Redis
+  - `app1`: aplicaçao Java
+  - `app2`: aplicaçao Python
+
+## Configurações aplicadas
+
+### App1 (Java)
+- Usa `HttpServer` embutido para expor rotas
+- Conecta ao Redis via `Jedis`
+- Faz cache das respostas em Redis com TTL de `10` segundos
+- As rotas são:
+  - `http://localhost:8081/rota1`
+  - `http://localhost:8081/rota2`
+- As variáveis de ambiente usadas:
+  - `REDIS_HOST=redis`
+  - `REDIS_PORT=6379`
+
+### App2 (Python)
+- Usa `http.server` para expor rotas simples
+- Conecta ao Redis via biblioteca `redis`
+- Faz cache das respostas em Redis com TTL de `60` segundos
+- As rotas são:
+  - `http://localhost:8082/rota1`
+  - `http://localhost:8082/rota2`
+- As variáveis de ambiente usadas:
+  - `REDIS_HOST=redis`
+  - `REDIS_PORT=6379`
+
+### docker-compose.yml
+- Cria três serviços: `redis`, `app1` e `app2`
+- `redis` expõe `6379`
+- `app1` expõe `8081` para o host
+- `app2` expõe `8082` para o host
+- `app1` e `app2` dependem de `redis`
+
+## Como executar
+
+1. Abra um terminal na pasta do projeto:
+
+```bash
+cd /home/pasta_do_projeto
+```
+
+2. Inicie o stack com Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+ou, se estiver usando a versão legacy do Compose:
+
+```
+
+3. Acesse as rotas no navegador ou via `curl`:
+
+- `App1`: `http://localhost:8081/rota1` e `http://localhost:8081/rota2`
+- `App2`: `http://localhost:8082/rota1` e `http://localhost:8082/rota2`
+
+## Monitoramento rápido via Docker Compose
+
+Este stack adiciona monitoramento básico com Prometheus e Grafana:
+
+- `redis_exporter` expõe métricas do Redis em `http://localhost:9121`
+- `cadvisor` expõe métricas de container em `http://localhost:8086`
+- `prometheus` está disponível em `http://localhost:9090`
+- `grafana` está disponível em `http://localhost:3000`
+
+A configuração do Prometheus está em `monitoring/prometheus.yml`.
+
+### Acesso ao Grafana
+
+- Usuário: `admin`
+- Senha: `admin`
+
+Após subir o stack, adicione a fonte de dados Prometheus em Grafana com:
+
+- URL: `http://prometheus:9090`
+
+Em seguida, crie dashboards com as métricas de Redis e containers.
+
+## Como testar o cache
+
+- Chame a mesma rota duas vezes seguidas e observe que a resposta é servida do cache.
+- Para `App1`, espere `10` segundos para que o cache expire.
+- Para `App2`, espere `60` segundos para que o cache expire.
+
+Exemplo:
+
+```bash
+curl http://localhost:8081/rota1
+sleep 10
+curl http://localhost:8081/rota1
+```
+
+## Observações
+
+- O Redis é compartilhado pelos dois apps.
+- Essa configuração permite validação rápida de cache e execução conjunta.
+
+## Sugestões de melhoria
+
+- Adicionar CI/CD para build automático e deploy ao alterar o código.
+- Incluir healthchecks nos containers para verificar se `App1`, `App2` e `Redis` estão saudáveis.
+- Externalizar configurações adicionais via variáveis de ambiente e evitar hardcode nos arquivos(sugestão: helm-chart).
+- Monitorar uso e TTL do Redis para identificar cache frio ou vazamentos de memória(podendo adicionar adicione redis_exporter + Prometheus + Grafana).
+- Versionar as imagens Docker e usar tags específicas em vez de `latest`.
+- Implementar invalidation de cache quando o conteúdo atender a mudanças de dados reais.
+- Adicionar logs e métricas de cache hit/miss para facilitar análise.
